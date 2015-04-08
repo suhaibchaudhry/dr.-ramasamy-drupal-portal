@@ -63,7 +63,7 @@ css[global.css][options][weight] = '10'
 
 css[override.css][name] = 'Override CSS File'
 css[override.css][description] = 'This file holds all the override CSS code for your theme.'
-css[override.css][options][weight] = '99'
+css[override.css][options][weight] = '11'
 
 settings[alpha_grid] = 'alpha_default'
 settings[alpha_primary_alpha_default] = 'normal'
