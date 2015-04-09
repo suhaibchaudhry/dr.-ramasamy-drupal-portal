@@ -49,6 +49,7 @@ zones[header] = Header
 zones[preface] = Preface
 zones[content] = Content
 zones[postscript] = Postscript
+zones[postscript2] = Postscript 2
 zones[footer] = Footer
 
 ; OPTIONAL STYLESHEETS
