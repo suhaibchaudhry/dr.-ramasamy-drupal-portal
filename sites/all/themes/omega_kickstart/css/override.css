@@ -186,8 +186,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Main Menu*/
 
-#region-branding {
-	margin: 65px 0 0 0;
+#region-branding, #region-branding-third {
+	margin-top: 50px;
+}
+
+#region-branding-second {
+	margin-top: 65px;	
 }
 
 #block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited {
@@ -206,19 +210,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #block-menu-menu-top-menu-left,  #block-menu-menu-top-menu-right {
-	float: left;
-	width: 44%;
 	border-top: 1px solid #C39A6B;
 	border-bottom: 1px solid #C39A6B;
 
 } 
 
-#block-menu-menu-top-menu-right {
-	margin: 30px 0 0 21px;
-}
-
-#block-menu-menu-top-menu-left {
-	margin: 30px 20px 0 0;
+#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left {
+	margin: 30px 0 0 0;
 }
 
 #block-block-14 {
@@ -237,7 +235,8 @@ h1, h2, h3, h4, h5, h6 {
 /*Inside Page*/
 
 .field-name-field-page-banner {
-	  border: 8px solid #eaeaea;
+	border: 8px solid #eaeaea;
+	margin: 0 0 15px 0;
 }
 
 #block-block-12 {
@@ -254,9 +253,44 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 5px;
 }
 
+.not-front .zone-content-wrapper {
+	box-shadow: 0 7px 15px #eaeaea;
+}
+
 .field-name-contact-us {
 	margin: 8px 0 8px 8px;
 	background: #eaeaea;
 	padding: 20px;
 	border-radius: 6px;
+}
+
+.node-page .field-name-body {
+	color: #666;
+}
+
+.node-page .field-name-title {
+	float: left;
+	width: 60%;
+}
+
+.node-page .field-name-breadcrumbs {
+	float: left;
+	width: 40%;
+
+}
+.breadcrumb {
+	background-color: transparent;
+	border: none;
+	color: #003399;
+	margin: 0 0 20px 0;
+	text-align: right;
+}
+
+.breadcrumb a {
+	color: #6B6B6B;
+ }
+/*Universal CSS*/
+
+.node-page {
+	margin: 0;
 }
