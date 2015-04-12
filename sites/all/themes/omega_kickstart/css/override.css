@@ -168,6 +168,9 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: right;
 }
 
+#region-user-second {
+	margin: 0 10px;
+}
 
 #block-block-2 a:link, #block-block-2 a:visited {
 	color: #fff;
@@ -187,11 +190,12 @@ h1, h2, h3, h4, h5, h6 {
 /*Main Menu*/
 
 #region-branding, #region-branding-third {
-	margin-top: 50px;
+	margin-top: 65px;
+	margin-bottom: 34px;
 }
 
 #region-branding-second {
-	margin-top: 65px;	
+	margin-top: 81px;	
 }
 
 #block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited {
