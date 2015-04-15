@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
-#region-footer-first, #region-footer-second, #region-footer-third, #region-footer-fourth {
+#region-footer-first, #region-footer-second, #region-footer-third {
 	border-right: 1px solid #fff;
 	height: 109px;
 	margin-bottom: 16px;
@@ -297,4 +297,35 @@ h1, h2, h3, h4, h5, h6 {
 
 .node-page {
 	margin: 0;
+}
+
+/*Accordion*/
+
+.z-accordion.horizontal > .z-section > .z-content > div {
+	padding: 0;
+}
+
+.z-accordion.horizontal > .z-section > .z-header {
+	background: #bf9467;
+	background: -moz-linear-gradient(left, #bf9467 0%, #ac7f52 100%, #ac7f52 100%, #99562d 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bf9467), color-stop(100%,#ac7f52), color-stop(100%,#ac7f52), color-stop(100%,#99562d));
+	background: -webkit-linear-gradient(left, #bf9467 0%,#ac7f52 100%,#ac7f52 100%,#99562d 100%);
+	background: -o-linear-gradient(left, #bf9467 0%,#ac7f52 100%,#ac7f52 100%,#99562d 100%);
+	background: -ms-linear-gradient(left, #bf9467 0%,#ac7f52 100%,#ac7f52 100%,#99562d 100%);
+	background: linear-gradient(to right, #bf9467 0%,#ac7f52 100%,#ac7f52 100%,#99562d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf9467', endColorstr='#99562d',GradientType=1 );
+	color: #fff;
+	text-shadow: 0 0 4px #000;
+}
+
+.views-uitoux-accordion .z-auto-g {
+	position: relative;
+}
+
+.views-uitoux-accordion .views-field-body {
+	position: absolute;
+}
+
+#block-widgets-s-socialmedia-profile-default, .widgets-element-horizontal {
+	margin-right:10px
 }
