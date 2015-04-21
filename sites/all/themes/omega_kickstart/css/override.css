@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Lora', serif;	
 }
 
+h2 {
+	font-size: 20px;
+}
+
 /*Bottom Footer*/
 
 #zone-footer2-wrapper {
@@ -298,6 +302,53 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb a {
 	color: #6B6B6B;
  }
+
+/*Right Sidebar Menu*/
+
+.group-sidebar-right .tb-megamenu {
+	background: #168ece;
+	background: -moz-linear-gradient(left, #168ece 0%, #158bc9 16%, #1998d5 32%, #1a9dd8 46%, #1ea1db 57%, #1ea1db 67%, #199bd7 77%, #1790cf 93%, #168ece 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#168ece), color-stop(16%,#158bc9), color-stop(32%,#1998d5), color-stop(46%,#1a9dd8), color-stop(57%,#1ea1db), color-stop(67%,#1ea1db), color-stop(77%,#199bd7), color-stop(93%,#1790cf), color-stop(100%,#168ece));
+	background: -webkit-linear-gradient(left, #168ece 0%,#158bc9 16%,#1998d5 32%,#1a9dd8 46%,#1ea1db 57%,#1ea1db 67%,#199bd7 77%,#1790cf 93%,#168ece 100%);
+	background: -o-linear-gradient(left, #168ece 0%,#158bc9 16%,#1998d5 32%,#1a9dd8 46%,#1ea1db 57%,#1ea1db 67%,#199bd7 77%,#1790cf 93%,#168ece 100%);
+	background: -ms-linear-gradient(left, #168ece 0%,#158bc9 16%,#1998d5 32%,#1a9dd8 46%,#1ea1db 57%,#1ea1db 67%,#199bd7 77%,#1790cf 93%,#168ece 100%);
+	background: linear-gradient(to right, #168ece 0%,#158bc9 16%,#1998d5 32%,#1a9dd8 46%,#1ea1db 57%,#1ea1db 67%,#199bd7 77%,#1790cf 93%,#168ece 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#168ece', endColorstr='#168ece',GradientType=1 );
+	margin: 0 0 8px 10px;
+}
+
+.group-sidebar-right .tb-megamenu .nav > li {
+	float: none;
+}
+
+.group-sidebar-right .tb-megamenu .nav > li > a {
+	border-right: none;
+	border-top: 0;
+	color: #fff;
+	font-weight: bold;
+	padding: 9px 15px;
+	text-shadow: none;
+	font-size: 12px;
+	border-bottom: 1px solid #E7E7E7;
+}
+
+.tb-megamenu .nav > li > a:focus, .tb-megamenu .nav > li > a:hover {
+	background-color: #fff;
+	color: #2d2d2d;
+}
+
+.group-sidebar-right .tb-megamenu .nav > .active > a, .group-sidebar-right .tb-megamenu .nav > .active > a:hover, .group-sidebar-right .tb-megamenu .nav > .active > a:focus {
+	background-color: #4D4D4D;
+}
+
+.field-name-erectile-dysfunction-megamenu h2.block-title, .field-name-vasectomy-sub-menu h2.block-title, .field-name-male-infertility-sub-menu h2.block-title, .field-name-low-testosterone-side-menu h2.block-title, .field-name-peyronie-s-disease-menu h2.block-title {
+	font-size: 14px;
+	margin: 0 0 0 10px;
+	background: #1A1A1A;
+	padding: 10px;
+	color: #F2F2F2;
+	border-radius: 3px 3px 0 0;
+}
 /*Universal CSS*/
 
 .node-page {
