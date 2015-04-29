@@ -81,3 +81,26 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   float: none !important; }
   .node-product-type .cloud-zoom-container .cloud-zoom-gallery-thumbs .cloud-zoom-gallery {
     margin: 5px; }
+
+
+
+
+/*Override CSS*/
+
+#block-block-8 {
+  width: 58%;
+}
+
+.readytogetstarted {
+  font-size: 25px;
+}
+
+.contactusbutton {
+  font-size: 18px;
+}
+
+/*First Footer*/
+
+#zone-footer {
+  font-size: 10px;
+}

@@ -235,3 +235,43 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   margin: 5px 0; }
 .node-product-type .field-name-field-product form.commerce-add-to-cart label {
   float: left; }
+
+
+/*Main Contact Us Button*/
+
+#block-block-8 {
+  width: 62%;
+}
+
+.readytogetstarted {
+  font-size: 38px;
+}
+
+.contactusbutton {
+  font-size: 28px;
+}
+
+/*Contact Us Page*/
+
+.group-middle .field-name-contact-us-map iframe {
+  width: 99%;
+}
+
+
+/*Second Footer*/
+
+#block-block-4 {
+  font-size: 10px;
+}
+
+/*First Footer*/
+
+#zone-footer {
+  font-size: 12px;
+}
+
+/*Logo*/
+
+#region-branding-second {
+  margin-top: 99px;
+}
