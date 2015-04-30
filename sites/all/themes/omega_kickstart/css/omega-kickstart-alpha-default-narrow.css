@@ -87,6 +87,14 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 
 /*Override CSS*/
 
+#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left,#block-block-14 {
+  display: block;
+}
+
+#block-tb-megamenu-main-menu {
+  display: none;
+}
+
 #block-block-8 {
   width: 58%;
 }
@@ -99,8 +107,207 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   font-size: 18px;
 }
 
+
+.contactusbutton {
+  background: #414141;
+  padding: 10px 25px;
+  border-radius: 4px;
+  float: left;
+  color: #fff;
+}
+
+.readytogetstarted {
+  float: left;
+  margin-right: 10px;
+}
+
+
+.group-right .field-name-contact-us {
+  display: none;
+}
+
+#block-block-12 {
+  padding: 0;
+}
+
+#block-block-12 h2.block-title {
+  margin: 0;
+  background: #004260;
+  color: #DFDFDF;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+#block-block-12 .contact-us-item {
+  color: #2d2d2d;
+}
+
+#block-menu-menu-peyronie-s-disease-sub-menu h2.block-title, #block-menu-menu-vasectomy-sub-menu h2.block-title, #block-menu-menu-vasectomy-reversal-sub-menu h2.block-title, #block-menu-menu-male-infertility h2.block-title, #block-menu-menu-erectile-dysfunction h2.block-title, #block-menu-menu-low-testosterone h2.block-title {
+  font-size: 14px;
+  background: #1A1A1A;
+  padding: 10px;
+  color: #F2F2F2;
+  border-radius: 3px 3px 0 0;
+}
+
+
+#block-menu-menu-peyronie-s-disease-sub-menu ul li.leaf, #block-menu-menu-vasectomy-sub-menu ul li.leaf, #block-menu-menu-vasectomy-reversal-sub-menu ul li.leaf, #block-menu-menu-male-infertility ul li.leaf, #block-menu-menu-erectile-dysfunction ul li.leaf, #block-menu-menu-low-testosterone ul li.leaf{
+  border-right: none;
+  border-top: 0;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: none;
+  font-size: 12px;
+  border-bottom: 1px solid #E7E7E7;
+  list-style-image: none;
+  margin: 0;
+  list-style-type: none;
+}
+
+#block-menu-menu-peyronie-s-disease-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone {
+  background: rgb(0,85,125);
+  background: -moz-linear-gradient(top, rgba(0,85,125,1) 0%, rgba(0,62,91,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,85,125,1)), color-stop(100%,rgba(0,62,91,1)));
+  background: -webkit-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: -o-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: -ms-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00557d', endColorstr='#003e5b',GradientType=0 );
+  margin: 0 0 8px 0;
+  border-radius: 4px;
+}
+
+#block-menu-menu-peyronie-s-disease-sub-menu li a, #block-menu-menu-low-testosterone li a, #block-menu-menu-vasectomy-sub-menu li a, #block-menu-menu-vasectomy-reversal-sub-menu li a, #block-menu-menu-male-infertility li a, #block-menu-menu-erectile-dysfunction li a {
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+
+/*Ranjith Ramasamy Bio Block*/
+
+#block-block-9 h2 {
+  font-size: 29px;
+  margin-bottom: 10px;
+  color: #eaeaea;
+}
+
+
 /*First Footer*/
 
 #zone-footer {
   font-size: 10px;
+}
+
+#region-footer-first, #region-footer-second, #region-footer-third {
+  padding: 10px 10px 10px 0;
+  margin: 10px 5px;
+}
+
+#region-footer-first, #region-footer-second, #region-footer-third {
+  border-right: 1px solid #fff;
+  height: 109px;
+  margin-bottom: 16px;
+  border-bottom: none;
+}
+
+#region-footer-fourth {
+  margin: 0;
+}
+
+/*Primary Navigation */
+
+#block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited {
+  font-size: 12px;
+}
+
+#region-branding-second {
+  margin-top: 108px;
+}
+
+#block-block-2 p, #block-block-3 p {
+  font-size: 12px;
+}
+
+/*Menu and Logo*/
+
+#region-branding, #region-branding-third {
+  margin-top: 65px;
+  margin-bottom: 34px;
+}
+
+#region-branding-second {
+  margin-top: 108px;
+}
+
+#block-block-14 {
+  float: left;
+  box-shadow: 0 0 18px #999999;
+}
+
+/*Sub Menu*/
+
+.field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-male-infertility-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu{
+  display: none;
+}
+
+/* Basic Page Display Suite*/
+
+.ds-3col-stacked-fluid.node-page.group-one-sidebar > .group-middle, .ds-3col-stacked-fluid.node-page > .group-right {
+  width: 100%
+}
+
+/*Top Header*/
+
+.zone-user-wrapper {
+  padding: 14px 0 0 0;
+}
+
+#block-block-2 {
+  font-size: 12px;
+  text-align: left;
+}
+
+#block-block-3 {
+  text-align: right;
+}
+
+#region-user-first {
+  float: left;
+}
+
+#region-user-second {
+  float: right;
+}
+
+/*Accordion*/
+
+.views-uitoux-accordion .views-field-body {
+  position: absolute;
+  padding: 15px;
+  top: 29px;
+  left: 30px;
+  font-size: 20px;
+  color: #303030;
+  text-shadow: 0 0 10px #C2C2C2;
+}
+
+.views-uitoux-accordion .views-field-field-slide-link {
+  position: absolute;
+  top: 118px;
+  left: 43px;
+  padding: 10px;
+  border-radius: 3px;
+  background: rgb(0,85,125);
+  background: -moz-linear-gradient(top, rgba(0,85,125,1) 0%, rgba(0,62,91,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,85,125,1)), color-stop(100%,rgba(0,62,91,1)));
+  background: -webkit-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: -o-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: -ms-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00557d', endColorstr='#003e5b',GradientType=0 );
+}
+
+#block-views-slideshow-block {
+  display: block;
 }

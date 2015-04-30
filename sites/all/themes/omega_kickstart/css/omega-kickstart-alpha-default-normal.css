@@ -237,6 +237,16 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   float: left; }
 
 
+/*Contact Us Sidebar*/
+
+.group-right .field-name-contact-us {
+  display: block;
+}
+
+#block-block-12 {
+  display: none;
+}
+
 /*Main Contact Us Button*/
 
 #block-block-8 {
@@ -270,8 +280,69 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   font-size: 12px;
 }
 
+
+/*Primary Navigation */
+
+#block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited {
+  font-size: 14px;
+}
+
 /*Logo*/
 
 #region-branding-second {
   margin-top: 99px;
+}
+
+/* Top Header */
+
+#block-block-2 p, #block-block-3 p {
+  font-size: 14px;
+}
+
+/* Basic Page Display Suite*/
+
+.ds-3col-stacked-fluid.node-page.group-one-sidebar > .group-middle {
+  width: 75%
+}
+
+.ds-3col-stacked-fluid.node-page > .group-right {
+  width: 25%;
+}
+
+/*Sub Menu*/
+
+#block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone, #block-menu-menu-peyronie-s-disease-sub-menu {
+  display: none;
+}
+
+.field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-male-infertility-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu {
+  display: block;
+}  
+
+/*Accordion*/
+
+.views-uitoux-accordion .views-field-body {
+  position: absolute;
+  padding: 15px;
+  top: 100px;
+  left: 30px;
+  font-size: 23px;
+  color: #303030;
+  text-shadow: 0 0 10px #C2C2C2;
+}
+
+.views-uitoux-accordion .views-field-field-slide-link {
+  position: absolute;
+  top: 197px;
+  left: 47px;
+  padding: 10px;
+  border-radius: 3px;
+  background: rgb(0,85,125);
+  background: -moz-linear-gradient(top, rgba(0,85,125,1) 0%, rgba(0,62,91,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,85,125,1)), color-stop(100%,rgba(0,62,91,1)));
+  background: -webkit-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: -o-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: -ms-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00557d', endColorstr='#003e5b',GradientType=0 );
 }

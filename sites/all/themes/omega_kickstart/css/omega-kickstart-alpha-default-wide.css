@@ -127,12 +127,6 @@ h2 {
 	margin: 0;
 }
 
-#region-footer-first, #region-footer-second, #region-footer-third {
-	border-right: 1px solid #fff;
-	height: 109px;
-	margin-bottom: 16px;
-}
-
 
 /*Contact Us Area*/
 	
@@ -212,10 +206,6 @@ h2 {
 	color: #fff;
 	padding: 10px;
 	border-radius: 4px 4px 0 0;
-}
-
-.group-middle .field-name-title h2 {
-	display: none;
 }
 
 #webform-client-form-15 label {
@@ -445,6 +435,7 @@ h2 {
 	color: #F2F2F2;
 	border-radius: 3px 3px 0 0;
 }
+
 /*Universal CSS*/
 
 .node-page {
