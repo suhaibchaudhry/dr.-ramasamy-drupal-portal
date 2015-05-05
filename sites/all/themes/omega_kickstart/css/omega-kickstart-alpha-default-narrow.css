@@ -104,16 +104,13 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 }
 
 .contactusbutton {
-  font-size: 18px;
-}
-
-
-.contactusbutton {
   background: #414141;
   padding: 10px 25px;
   border-radius: 4px;
   float: left;
   color: #fff;
+  font-size: 18px;
+  width: auto;
 }
 
 .readytogetstarted {
@@ -247,7 +244,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 
 /*Sub Menu*/
 
-.field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-male-infertility-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu{
+.field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-male-infertility-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu {
   display: none;
 }
 

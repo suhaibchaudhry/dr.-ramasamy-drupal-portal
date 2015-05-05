@@ -507,10 +507,43 @@ h2 {
 	color: #fff;
 }
 
-#block-widgets-s-socialmedia-profile-default, .widgets-element-horizontal {
-	margin-right:10px
+#block-block-19 a.youtube, #block-block-19 a.googleplus, #block-block-19 a.pintrest, #block-block-19 a.yelp, #block-block-19 a.twitter, #block-block-19 a.facebook, #block-block-19 a.linkedin, #block-block-19 a.blogger {
+	text-indent: -9999px;
+	width: 35px;
+	height: 35px;
+	display: block;
+	float: left;
+	margin: 0 2px 0 0;
 }
 
+
+#block-block-19 a.facebook {
+	background: url(../images/facebook.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.twitter {
+	background: url(../images/twitter.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.googleplus {
+	background: url(../images/googleplus.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.youtube {
+	background: url(../images/youtube.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.linkedin {
+	background: url(../images/linkedin.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.youtube:hover, #block-block-19 a.googleplus:hover, #block-block-19 a.pintrest:hover, #block-block-19 a.yelp:hover, #block-block-19 a.twitter:hover, #block-block-19 a.facebook:hover, #block-block-19 a.linkedin:hover, #block-block-19 a.blogger:hover {
+  background-position: 0 -63px;
+}
+
+#block-block-19 {
+	margin: 10px;
+}
 
 /*Override CSS*/
 

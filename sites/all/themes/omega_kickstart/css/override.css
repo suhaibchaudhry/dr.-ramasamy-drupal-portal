@@ -124,20 +124,7 @@ h2 {
 
 /*Contact Us Area*/
 	
-.contactusbutton {
-	background: #414141;
-	padding: 10px 25px;
-	border-radius: 4px;
-	float: left;
-	color: #fff;
-	font-size: 28px;
-}
 
-.readytogetstarted {
- 	float: left;
- 	font-size: 38px;
- 	margin-right: 10px;
-}
 
 #block-block-8 {
 	padding:30px 0;
@@ -446,8 +433,4 @@ h2 {
 
 .views-uitoux-accordion .views-field-field-slide-link a {
 	color: #fff;
-}
-
-#block-widgets-s-socialmedia-profile-default, .widgets-element-horizontal {
-	margin-right:10px
 }

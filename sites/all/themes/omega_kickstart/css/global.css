@@ -3000,7 +3000,7 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   width: 100%
 }
 
-.field-name-vasectomy-sub-menu, .field-name-contact-us {
+.field-name-contact-us, .field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-male-infertility-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu {
   display: none;
 }
 
@@ -3082,10 +3082,37 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   box-shadow: 0 0 18px #999999;
 }
 
-.tb-megamenu .btn-navbar {
+#block-tb-megamenu-main-menu .tb-megamenu .btn-navbar {
   width: 100%;
   margin: 10px 0 0 0;
 }
+
+#block-tb-megamenu-main-menu .tb-megamenu .btn-navbar {
+  background-image: url("../images/menu-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#block-tb-megamenu-main-menu .tb-megamenu .btn:hover {
+    background-position: center;
+}
+
+#block-tb-megamenu-main-menu .tb-megamenu .nav-collapse {
+  top: 40px;
+}
+
+#block-tb-megamenu-main-menu .tb-megamenu .nav > .active > a, .tb-megamenu .nav > .active > a:hover, .tb-megamenu .nav > .active > a:focus {
+  background-color: #00557C;
+}
+
+#block-tb-megamenu-main-menu .tb-megamenu .nav-collapse .nav > li.active > a:hover, .tb-megamenu .nav-collapse .nav > li.active > a:focus {
+  background-color: #000;
+}
+
+#block-tb-megamenu-main-menu .tb-megamenu .nav-collapse .nav > li > a:hover, .tb-megamenu .nav-collapse .nav > li > a:focus {
+  color: #fff;
+}
+
 
 /*Top Header*/
 
@@ -3124,7 +3151,7 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
 
 .readytogetstarted {
   float: none;
-  font-size: 37px;
+  font-size: 23px;
   text-align: center;
 }
 
@@ -3134,8 +3161,9 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   border-radius: 4px;
   float: none;
   color: #fff;
-  font-size: 28px;
+  font-size: 16px;
   text-align: center;
+  width: auto;
 }
 
 #block-block-8 {
@@ -3146,4 +3174,43 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
 
 #block-views-slideshow-block {
   display: none;
+}
+
+/*Social Media*/
+
+#block-block-19 a.youtube, #block-block-19 a.googleplus, #block-block-19 a.pintrest, #block-block-19 a.yelp, #block-block-19 a.twitter, #block-block-19 a.facebook, #block-block-19 a.linkedin, #block-block-19 a.blogger {
+  text-indent: -9999px;
+  width: 35px;
+  height: 35px;
+  display: block;
+  float: left;
+  margin: 0 2px 0 0;
+}
+
+#block-block-19 a.facebook {
+  background: url(../images/facebook.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.twitter {
+  background: url(../images/twitter.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.googleplus {
+  background: url(../images/googleplus.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.youtube {
+  background: url(../images/youtube.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.linkedin {
+  background: url(../images/linkedin.png) no-repeat 0px 0px;
+}
+
+#block-block-19 a.youtube:hover, #block-block-19 a.googleplus:hover, #block-block-19 a.pintrest:hover, #block-block-19 a.yelp:hover, #block-block-19 a.twitter:hover, #block-block-19 a.facebook:hover, #block-block-19 a.linkedin:hover, #block-block-19 a.blogger:hover {
+  background-position: 0 -63px;
+}
+
+#block-block-19 {
+  margin: 10px;
 }
