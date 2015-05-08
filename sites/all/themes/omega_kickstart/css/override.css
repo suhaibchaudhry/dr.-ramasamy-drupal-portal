@@ -39,7 +39,7 @@ h2 {
 	font-size: 12px;	
 }
 
-#block-menu-menu-footer-menu {
+#block-menu-menu-footer-menu, #block-menu-menu-spanish-footer-menu {
 	float: right;
 }
 
@@ -58,17 +58,17 @@ h2 {
 
 }
 
-.zone-footer-wrapper, #block-block-6 a:link, #block-block-6 a:visited, #block-menu-menu-footer-menu li a{
+.zone-footer-wrapper, #block-block-6 a:link, #block-block-6 a:visited, #block-menu-menu-footer-menu li a, #block-menu-menu-spanish-footer-menu li a{
 	color: #fff;
 
 }
 
- #block-menu-menu-footer-menu li {
+ #block-menu-menu-footer-menu li, #block-menu-menu-spanish-footer-menu li {
  	float: left;
  	font-style: italic;
  }
 
- .zone-footer-wrapper, #block-block-6 a:link, #block-block-6 a:visited, #block-menu-menu-footer-menu li a,  #block-menu-menu-footer-menu li {
+ .zone-footer-wrapper, #block-block-6 a:link, #block-block-6 a:visited, #block-menu-menu-footer-menu li a,  #block-menu-menu-footer-menu li, #block-menu-menu-spanish-footer-menu li a,  #block-menu-menu-spanish-footer-menu li {
 	font-family: 'Lora', serif;
 }
 
@@ -221,23 +221,28 @@ h2 {
 }
 
 
+
 #region-user-second {
 	margin: 0 10px;
 }
 
-#block-block-2 a:link, #block-block-2 a:visited {
+#block-block-2 a:link, #block-block-2 a:visited, #block-block-3 a:link, #block-block-3 a:visited {
 	color: #fff;
 }
 
 /*Main Menu*/
 
-#block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited {
+#block-menu-menu-spanish-main-menu-right- .first, #block-menu-menu-spanish-main-menu .first {
+	line-height: 40px;
+}
+
+#block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited, #block-menu-menu-spanish-main-menu a:link, #block-menu-menu-spanish-main-menu-right- a:visited, #block-menu-menu-spanish-main-menu-right- a:link, #block-menu-menu-spanish-main-menu a:visited {
 	color: #000;
 	font-weight: bold;
 	text-shadow: 0 0 3px #d3d3d3;
 }
 
-#block-menu-menu-top-menu-left ul li.leaf, #block-menu-menu-top-menu-right ul li.leaf {
+#block-menu-menu-top-menu-left ul li.leaf, #block-menu-menu-top-menu-right ul li.leaf, #block-menu-menu-spanish-main-menu ul li.leaf, #block-menu-menu-spanish-main-menu-right- ul li.leaf {
  	float: left;
 	width: 30%;
 	list-style-image: none;
@@ -246,13 +251,13 @@ h2 {
 	padding: 10px 0 10px 0;
 }
 
-#block-menu-menu-top-menu-left,  #block-menu-menu-top-menu-right {
+#block-menu-menu-top-menu-left,  #block-menu-menu-top-menu-right, #block-menu-menu-spanish-main-menu, #block-menu-menu-spanish-main-menu-right- {
 	border-top: 1px solid #919191;
 	border-bottom: 1px solid #919191;
 
 } 
 
-#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left {
+#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left, #block-menu-menu-spanish-main-menu-right-, #block-menu-menu-spanish-main-menu {
 	margin: 30px 0 0 0;
 }
 
@@ -381,7 +386,7 @@ h2 {
 	background-color: #4D4D4D;
 }
 
-.field-name-vasectomy-reversal-submenu h2.block-title, .field-name-erectile-dysfunction-megamenu h2.block-title, .field-name-vasectomy-sub-menu h2.block-title, .field-name-male-infertility-sub-menu h2.block-title, .field-name-low-testosterone-side-menu h2.block-title, .field-name-peyronie-s-disease-menu h2.block-title {
+.field-name-vasectomy-reversal-submenu h2.block-title, .field-name-erectile-dysfunction-megamenu h2.block-title, .field-name-vasectomy-sub-menu h2.block-title, .field-name-male-infertility-sub-menu h2.block-title, .field-name-low-testosterone-side-menu h2.block-title, .field-name-peyronie-s-disease-menu h2.block-title, .field-name-male-infertility-spanish-submenu h2.block-title, .field-name-vasectomy-spanish-submenu h2.block-title, .field-name-vasectomy-reversal-spanish-subme h2.block-title, .field-name-low-testosterone-spanish-submenu h2.block-title {
 	font-size: 14px;
 	margin: 0 0 0 10px;
 	background: #1A1A1A;
