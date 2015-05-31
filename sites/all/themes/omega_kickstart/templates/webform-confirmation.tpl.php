@@ -20,6 +20,7 @@
   <?php if ($confirmation_message): ?>
     <?php print $confirmation_message ?>
   <?php else: ?>
-    <p><?php print t("We have dispatched your inquiry to our team. A representative from Dr. Ranjith Ramasamy's office will review your request and get back with you as soon as possible. You may contact us at 1 (877) 562-8577 for immediate assistance."); ?></p>
+    <p><?php print t("We have dispatched your inquiry to our team. A representative from Dr. Ranjith Ramasamy's office will review your request and get back with you as soon as possible. You may contact us at 1 (305) 243-4562 for immediate assistance, however if this is a medical emergency please call 911 instead."); ?></p>
+    <p><?php print t("Thank you."); ?></p>
   <?php endif; ?>
 </div>
