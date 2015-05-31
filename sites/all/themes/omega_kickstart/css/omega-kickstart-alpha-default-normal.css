@@ -283,7 +283,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 
 /*Primary Navigation */
 
-#block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited {
+#block-menu-menu-top-menu-left a:link, #block-menu-menu-top-menu-left a:visited, #block-menu-menu-top-menu-right a:link, #block-menu-menu-top-menu-right a:visited, #block-menu-menu-spanish-main-menu a:link, #block-menu-menu-spanish-main-menu-right- a:visited, #block-menu-menu-spanish-main-menu-right- a:link, #block-menu-menu-spanish-main-menu a:visited {
   font-size: 14px;
 }
 
@@ -295,7 +295,7 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 
 /* Top Header */
 
-#block-block-2 p, #block-block-3 p {
+#block-block-2 p, #block-block-3 p, #block-block-3 a:link, #block-block-3 a:visited {
   font-size: 14px;
 }
 
@@ -315,9 +315,17 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   display: none;
 }
 
-.field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-male-infertility-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu {
+.field-name-vasectomy-reversal-submenu, .field-name-erectile-dysfunction-megamenu, .field-name-vasectomy-sub-menu, .field-name-low-testosterone-side-menu, .field-name-peyronie-s-disease-menu {
   display: block;
 }  
+
+.field-name-vasectomy-spanish-submenu, .field-name-vasectomy-reversal-spanish-subme, .field-name-male-infertility-spanish-submenu, .field-name-low-testosterone-spanish-submenu {
+  display: block;
+}
+
+#block-menu-menu-peyronie-s-disease-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone, #block-menu-menu-male-infertility-spanish-su, #block-menu-menu-vasectomy-spanish-submenu-, #block-menu-menu-vasectomy-reversal-spanish-, #block-menu-menu-bajos-niveles-de-testostero {
+  display: none;
+}
 
 /*Accordion*/
 

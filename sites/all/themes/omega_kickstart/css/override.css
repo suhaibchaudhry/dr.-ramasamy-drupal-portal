@@ -3,7 +3,7 @@
 
 /*Fonts*/
 
-@import url(http://fonts.googleapis.com/css?family=Lora:400,400italic|Merriweather:400,300italic,300,400italic);
+@import url(//fonts.googleapis.com/css?family=Lora:400,400italic|Merriweather:400,300italic,300,400italic);
 
 
 body {
@@ -44,6 +44,16 @@ h2 {
 }
 
 /*Top Footer*/
+
+/*@media (min-device-width: 740px) and (min-width: 740px), (max-device-width: 800px) and (max-width: 800px) and (orientation-landscape) {
+        .i18n-es #region-branding-second {
+                margin-top: 108px;
+        }
+}*/
+
+.i18n-es #region-branding-second {
+	margin-top: 90px;
+}
 
 #section-footer {
 	background: rgb(0,85,125); /* Old browsers */
@@ -251,6 +261,10 @@ h2 {
 	padding: 10px 0 10px 0;
 }
 
+#block-menu-menu-spanish-main-menu ul li.leaf, #block-menu-menu-spanish-main-menu-right- ul li.leaf {
+	line-height: 21px;
+}
+
 #block-menu-menu-top-menu-left,  #block-menu-menu-top-menu-right, #block-menu-menu-spanish-main-menu, #block-menu-menu-spanish-main-menu-right- {
 	border-top: 1px solid #919191;
 	border-bottom: 1px solid #919191;
@@ -386,13 +400,17 @@ h2 {
 	background-color: #4D4D4D;
 }
 
-.field-name-vasectomy-reversal-submenu h2.block-title, .field-name-erectile-dysfunction-megamenu h2.block-title, .field-name-vasectomy-sub-menu h2.block-title, .field-name-male-infertility-sub-menu h2.block-title, .field-name-low-testosterone-side-menu h2.block-title, .field-name-peyronie-s-disease-menu h2.block-title, .field-name-male-infertility-spanish-submenu h2.block-title, .field-name-vasectomy-spanish-submenu h2.block-title, .field-name-vasectomy-reversal-spanish-subme h2.block-title, .field-name-low-testosterone-spanish-submenu h2.block-title {
+.field-name-vasectomy-reversal-submenu h2.block-title, .field-name-erectile-dysfunction-megamenu h2.block-title, .field-name-vasectomy-sub-menu h2.block-title, .field-name-male-infertility-submenu h2.block-title, .field-name-low-testosterone-side-menu h2.block-title, .field-name-peyronie-s-disease-menu h2.block-title, .field-name-male-infertility-spanish-submenu h2.block-title, .field-name-vasectomy-spanish-submenu h2.block-title, .field-name-vasectomy-reversal-spanish-subme h2.block-title, .field-name-low-testosterone-spanish-submenu h2.block-title, .field-name-peyronies-disease-spanish h2.block-title, .field-name-erectile-dysfunction-sub-menu-sp h2.block-title {
 	font-size: 14px;
 	margin: 0 0 0 10px;
 	background: #1A1A1A;
 	padding: 10px;
 	color: #F2F2F2;
 	border-radius: 3px 3px 0 0;
+}
+
+.page-node-15 .group-middle .field-name-title h2 {
+	display: none;
 }
 
 /*Universal CSS*/

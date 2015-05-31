@@ -20,6 +20,6 @@
   <?php if ($confirmation_message): ?>
     <?php print $confirmation_message ?>
   <?php else: ?>
-    <p><?php print t('We have dispatched your inquiry to our team. An Empower Pharmacy representative will review your request and get back with you as soon as possible. You may contact us at 1 (877) 562-8577 for immediate assistance.'); ?></p>
+    <p><?php print t("We have dispatched your inquiry to our team. A representative from Dr. Ranjith Ramasamy's office will review your request and get back with you as soon as possible. You may contact us at 1 (877) 562-8577 for immediate assistance."); ?></p>
   <?php endif; ?>
 </div>

@@ -3004,6 +3004,10 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   display: none;
 }
 
+.field-name-vasectomy-spanish-submenu, .field-name-vasectomy-reversal-spanish-subme, .field-name-male-infertility-spanish-submenu, .field-name-low-testosterone-spanish-submenu {
+  display: none;
+}
+
 #block-block-12 h2.block-title {
   margin: 0;
   background: #004260;
@@ -3025,7 +3029,7 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
 }
 
 
-#block-menu-menu-peyronie-s-disease-sub-menu ul li.leaf, #block-menu-menu-vasectomy-sub-menu ul li.leaf, #block-menu-menu-vasectomy-reversal-sub-menu ul li.leaf, #block-menu-menu-male-infertility ul li.leaf, #block-menu-menu-erectile-dysfunction ul li.leaf, #block-menu-menu-low-testosterone ul li.leaf{
+#block-menu-menu-peyronie-s-disease-sub-menu ul li.leaf, #block-menu-menu-vasectomy-sub-menu ul li.leaf, #block-menu-menu-vasectomy-reversal-sub-menu ul li.leaf, #block-menu-menu-male-infertility ul li.leaf, #block-menu-menu-erectile-dysfunction ul li.leaf, #block-menu-menu-low-testosterone ul li.leaf, #block-menu-menu-male-infertility-spanish-su ul li.leaf, #block-menu-menu-vasectomy-spanish-submenu- ul li.leaf,#block-menu-menu-vasectomy-reversal-spanish- ul li.leaf,#block-menu-menu-bajos-niveles-de-testostero ul li.leaf {
   border-right: none;
   border-top: 0;
   color: #fff;
@@ -3038,7 +3042,15 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   list-style-type: none;
 }
 
-#block-menu-menu-peyronie-s-disease-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone {
+#block-menu-menu-peyronie-s-disease-sub-menu h2.block-title, #block-menu-menu-vasectomy-sub-menu h2.block-title, #block-menu-menu-vasectomy-reversal-sub-menu h2.block-title, #block-menu-menu-male-infertility h2.block-title, #block-menu-menu-erectile-dysfunction h2.block-title, #block-menu-menu-low-testosterone h2.block-title, #block-menu-menu-male-infertility-spanish-su h2.block-title, #block-menu-menu-vasectomy-spanish-submenu- h2.block-title,#block-menu-menu-vasectomy-reversal-spanish- h2.block-title, #block-menu-menu-bajos-niveles-de-testostero h2.block-title {
+  font-size: 14px;
+  background: #1A1A1A;
+  padding: 10px;
+  color: #F2F2F2;
+  border-radius: 3px 3px 0 0;
+}
+
+#block-menu-menu-peyronie-s-disease-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone, #block-menu-menu-male-infertility-spanish-su, #block-menu-menu-vasectomy-spanish-submenu-,#block-menu-menu-vasectomy-reversal-spanish-, #block-menu-menu-bajos-niveles-de-testostero {
   background: rgb(0,85,125);
   background: -moz-linear-gradient(top, rgba(0,85,125,1) 0%, rgba(0,62,91,1) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,85,125,1)), color-stop(100%,rgba(0,62,91,1)));
@@ -3051,7 +3063,7 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   border-radius: 4px;
 }
 
-#block-menu-menu-peyronie-s-disease-sub-menu li a, #block-menu-menu-low-testosterone li a, #block-menu-menu-vasectomy-sub-menu li a, #block-menu-menu-vasectomy-reversal-sub-menu li a, #block-menu-menu-male-infertility li a, #block-menu-menu-erectile-dysfunction li a {
+#block-menu-menu-peyronie-s-disease-sub-menu li a, #block-menu-menu-low-testosterone li a, #block-menu-menu-vasectomy-sub-menu li a, #block-menu-menu-vasectomy-reversal-sub-menu li a, #block-menu-menu-male-infertility li a, #block-menu-menu-erectile-dysfunction li a, #block-menu-menu-male-infertility-spanish-su li a, #block-menu-menu-vasectomy-spanish-submenu- li a,#block-menu-menu-vasectomy-reversal-spanish- li a, #block-menu-menu-bajos-niveles-de-testostero li a {
   color: #fff;
   width: 100%;
   padding: 10px;
@@ -3060,7 +3072,7 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
 
 /*Menu and Logo*/
 
-#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left {
+#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left, #block-menu-menu-spanish-main-menu, #block-menu-menu-spanish-main-menu-right- {
   display: none;
 }
 

@@ -436,6 +436,10 @@ h2 {
 	border-radius: 3px 3px 0 0;
 }
 
+#block-menu-menu-peyronie-s-disease-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone, #block-menu-menu-male-infertility-spanish-su, #block-menu-menu-vasectomy-spanish-submenu-, #block-menu-menu-bajos-niveles-de-testostero {
+	display: none;
+}
+
 /*Universal CSS*/
 
 .node-page {
