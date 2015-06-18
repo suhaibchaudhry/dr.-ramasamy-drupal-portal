@@ -457,3 +457,26 @@ h2 {
 .views-uitoux-accordion .views-field-field-slide-link a {
 	color: #fff;
 }
+
+@media (max-width: 980px) {
+        .ds-3col-stacked-fluid > .group-left {
+			width: auto;
+			float: initial;
+        }
+
+        .ds-3col-stacked-fluid.group-two-sidebars > .group-middle {
+			width: 100%;
+        }
+
+        #undefined-1 p {
+        	font-size: 14px;
+        }
+
+        #undefined-4 p {
+        	font-size: 13px;
+        }
+
+        #undefined-5 p {
+        	font-size: 15px;
+        }
+}
