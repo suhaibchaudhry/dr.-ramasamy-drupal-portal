@@ -480,3 +480,19 @@ h2 {
         	font-size: 15px;
         }
 }
+
+
+.video-container {
+  text-align: center;
+}
+
+.video-container iframe {
+	width: 768px;
+	height: 675px;
+}
+
+@media (max-width: 1220px) {
+	.video-container {
+		display: none;
+	}
+}

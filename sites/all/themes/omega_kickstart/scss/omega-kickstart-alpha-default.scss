@@ -458,3 +458,12 @@ div.messages.commerce-add-to-cart-confirmation .message-inner {
     display: table-cell;
   }
 }
+
+.video-container {
+  text-align: center;
+
+  iframe {
+    width: 672px;
+    height: 568px;
+  }
+}
