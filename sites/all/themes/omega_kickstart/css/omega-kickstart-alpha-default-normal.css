@@ -290,7 +290,8 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 /*Logo*/
 
 #region-branding-second {
-  margin-top: 99px;
+  margin-top: 75px;
+  width: 80px;
 }
 
 /* Top Header */

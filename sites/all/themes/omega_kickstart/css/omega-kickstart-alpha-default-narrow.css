@@ -129,8 +129,8 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 
 #block-block-12 h2.block-title {
   margin: 0;
-  background: #004260;
-  color: #DFDFDF;
+  background: #17A6B6;
+  color: #fff;
   padding: 10px;
   border-radius: 4px 4px 0 0;
 }
@@ -162,14 +162,14 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 }
 
 #block-menu-menu-peyronie-s-disease-sub-menu, #block-menu-menu-vasectomy-sub-menu, #block-menu-menu-vasectomy-reversal-sub-menu, #block-menu-menu-male-infertility, #block-menu-menu-erectile-dysfunction, #block-menu-menu-low-testosterone {
-  background: rgb(0,85,125);
-  background: -moz-linear-gradient(top, rgba(0,85,125,1) 0%, rgba(0,62,91,1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,85,125,1)), color-stop(100%,rgba(0,62,91,1)));
-  background: -webkit-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
-  background: -o-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
-  background: -ms-linear-gradient(top, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
-  background: linear-gradient(to bottom, rgba(0,85,125,1) 0%,rgba(0,62,91,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00557d', endColorstr='#003e5b',GradientType=0 );
+  background: #17a6b6;
+  background: -moz-linear-gradient(top, #17a6b6 0%, #0092a5 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#17a6b6), color-stop(100%,#0092a5));
+  background: -webkit-linear-gradient(top, #17a6b6 0%,#0092a5 100%);
+  background: -o-linear-gradient(top, #17a6b6 0%,#0092a5 100%);
+  background: -ms-linear-gradient(top, #17a6b6 0%,#0092a5 100%);
+  background: linear-gradient(to bottom, #17a6b6 0%,#0092a5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17a6b6', endColorstr='#0092a5',GradientType=0 );
   margin: 0 0 8px 0;
   border-radius: 4px;
 }
@@ -219,7 +219,10 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 }
 
 #region-branding-second {
-  margin-top: 108px;
+  margin-top: 77px;
+  width: 81px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 #block-block-2 p, #block-block-3 p {
@@ -231,15 +234,12 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
 #region-branding, #region-branding-third {
   margin-top: 65px;
   margin-bottom: 34px;
-}
-
-#region-branding-second {
-  margin-top: 108px;
+  margin-left: 2px;
+  margin-right: 3px;
 }
 
 #block-block-14 {
   float: left;
-  box-shadow: 0 0 18px #999999;
 }
 
 /*Sub Menu*/
