@@ -267,6 +267,12 @@ h2 {
 	margin: 30px 0 0 0;
 }
 
+@media (min-width: 980px) {
+	#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left, #block-menu-menu-spanish-main-menu-right-, #block-menu-menu-spanish-main-menu {
+		width: 106%;
+	}
+}
+
 #block-block-14 p {
 	margin-bottom: 0;
 }
@@ -485,6 +491,10 @@ h2 {
 
 @media (max-width: 740px) {
 	.video-container {
+		display: none;
+	}
+
+	.front #zone-preface-wrapper {
 		display: none;
 	}
 }
