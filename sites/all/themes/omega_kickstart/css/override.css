@@ -268,8 +268,11 @@ h2 {
 }
 
 @media (min-width: 980px) {
-	#block-menu-menu-top-menu-right, #block-menu-menu-top-menu-left, #block-menu-menu-spanish-main-menu-right-, #block-menu-menu-spanish-main-menu {
+	#block-menu-menu-top-menu-right, #block-menu-menu-spanish-main-menu-right- {
 		width: 106%;
+	}
+	#block-menu-menu-top-menu-left, #block-menu-menu-spanish-main-menu {
+		width: 100%;
 	}
 }
 
