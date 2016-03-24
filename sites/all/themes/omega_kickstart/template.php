@@ -11,6 +11,11 @@
  * for more information on this topic.
  */
 
+function omega_kickstart_preprocess_page(&$vars) {
+	$vars['title'] = preg_replace('\s+', '-', $vars['title']);
+}
+
+
 /**
  * Preprocess variables for html.tpl.php
  *
