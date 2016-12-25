@@ -31,21 +31,16 @@ function wysiwyg_tinymce_editor() {
     'settings form callback' => 'wysiwyg_tinymce_settings_form',
     'init callback' => 'wysiwyg_tinymce_init',
     'settings callback' => 'wysiwyg_tinymce_settings',
-    'plugin callback' => 'wysiwyg_tinymce_plugins',
-    'plugin settings callback' => 'wysiwyg_tinymce_plugin_settings',
+    'plugin callback' => '_wysiwyg_tinymce_plugins',
+    'plugin meta callback' => '_wysiwyg_tinymce_plugin_meta',
     'proxy plugin' => array(
       'drupal' => array(
         'load' => TRUE,
         'proxy' => TRUE,
       ),
     ),
-    'proxy plugin settings callback' => 'wysiwyg_tinymce_proxy_plugin_settings',
+    'proxy plugin settings callback' => '_wysiwyg_tinymce_proxy_plugin_settings',
     'versions' => array(
-      '2.1' => array(
-        'js files' => array('tinymce-2.js'),
-        'css files' => array('tinymce-2.css'),
-        'download url' => 'http://sourceforge.net/project/showfiles.php?group_id=103281&package_id=111430&release_id=557383',
-      ),
       // @todo Starting from 3.3, tiny_mce.js may support JS aggregation.
       '3.1' => array(
         'js files' => array('tinymce-3.js'),
@@ -137,15 +132,23 @@ function wysiwyg_tinymce_settings_form(&$form, &$form_state) {
   $settings = $profile->settings;
   $settings += array(
     'apply_source_formatting' => FALSE,
-    // Also available, but buggy in TinyMCE 2.x: blockquote,code,dt,dd,samp.
-    'theme_advanced_blockformats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
     'convert_fonts_to_spans' => TRUE,
     'paste_auto_cleanup_on_paste' => TRUE,
-    'theme_advanced_styles' => '',
-    'theme_advanced_statusbar_location' => 'bottom',
+    'paste_convert_middot_lists' => TRUE,
+    'paste_max_consecutive_linebreaks' => 2,
+    'paste_retain_style_properties' => 'none',
+    'paste_remove_styles' => TRUE,
+    'paste_remove_styles_if_webkit' => TRUE,
+    'paste_strip_class_attributes' => 'mso',
+    'paste_text_linebreaktype' => 'combined',
     'preformatted' => FALSE,
     'remove_linebreaks' => TRUE,
+    // Also available, but buggy in TinyMCE 2.x: blockquote,code,dt,dd,samp.
+    'theme_advanced_blockformats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+    'theme_advanced_path' => TRUE,
     'theme_advanced_resizing' => TRUE,
+    'theme_advanced_statusbar_location' => 'bottom',
+    'theme_advanced_styles' => '',
     'theme_advanced_toolbar_align' => 'left',
     'theme_advanced_toolbar_location' => 'top',
     'verify_html' => TRUE,
@@ -169,10 +172,23 @@ function wysiwyg_tinymce_settings_form(&$form, &$form_state) {
 
   $form['appearance']['theme_advanced_statusbar_location'] = array(
     '#type' => 'select',
-    '#title' => t('Path location'),
+    '#title' => t('Status bar location'),
     '#default_value' => $settings['theme_advanced_statusbar_location'],
     '#options' => array('none' => t('Hide'), 'top' => t('Top'), 'bottom' => t('Bottom')),
-    '#description' => t('Where to display the path to HTML elements (i.e. <code>body > table > tr > td</code>).') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'theme_advanced_statusbar_location', '@url' => url('http://www.tinymce.com/wiki.php/Configuration3x:theme_advanced_statusbar_location'))),
+    '#description' => t('This option enables you to specify where the element statusbar with the path and resize tool should be located.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'theme_advanced_statusbar_location', '@url' => url('http://www.tinymce.com/wiki.php/Configuration3x:theme_advanced_statusbar_location'))),
+  );
+
+  $form['appearance']['theme_advanced_path'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable the element path'),
+    '#default_value' => $settings['theme_advanced_path'],
+    '#return_value' => 1,
+    '#description' => t('This option gives you the ability to enable/disable the element path.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'theme_advanced_path', '@url' => url('http://www.tinymce.com/wiki.php/Configuration3x:theme_advanced_path'))),
+    '#states' => array(
+      'invisible' => array(
+        ':input[name="theme_advanced_statusbar_location"]' => array('value' => 'none'),
+      ),
+    ),
   );
 
   $form['appearance']['theme_advanced_resizing'] = array(
@@ -180,7 +196,12 @@ function wysiwyg_tinymce_settings_form(&$form, &$form_state) {
     '#title' => t('Enable resizing button'),
     '#default_value' => $settings['theme_advanced_resizing'],
     '#return_value' => 1,
-    '#description' => t('This option gives you the ability to enable/disable the resizing button. If enabled, the Path location toolbar must be set to "Top" or "Bottom" in order to display the resize icon.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'theme_advanced_resizing', '@url' => url('http://www.tinymce.com/wiki.php/Configuration3x:theme_advanced_resizing'))),
+    '#description' => t('This option gives you the ability to enable/disable the resizing button.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'theme_advanced_resizing', '@url' => url('http://www.tinymce.com/wiki.php/Configuration3x:theme_advanced_resizing'))),
+    '#states' => array(
+      'invisible' => array(
+        ':input[name="theme_advanced_statusbar_location"]' => array('value' => 'none'),
+      ),
+    ),
   );
 
   $form['output']['verify_html'] = array(
@@ -250,17 +271,138 @@ function wysiwyg_tinymce_settings_form(&$form, &$form_state) {
   $form['paste'] = array(
     '#type' => 'fieldset',
     '#title' => t('Paste plugin'),
-    '#description' => t('Settings for the paste plugin.'),
+    '#description' => t('Settings for the <a href="@url">@plugin</a> plugin.', array('@plugin' => 'paste', '@url' => url('http://www.tinymce.com/wiki.php/Plugin3x:paste'))),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#group' => 'advanced',
   );
+
   $form['paste']['paste_auto_cleanup_on_paste'] = array(
     '#type' => 'checkbox',
     '#title' => t('Process contents on paste'),
     '#default_value' => !empty($settings['paste_auto_cleanup_on_paste']),
     '#return_value' => 1,
-    '#description' => t('If enabled, contents will be automatically processed when you paste using Ctrl+V or similar methods. Cleaning up contents from MS Word or pasting as plain text will <strong>not</strong> work without this.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'paste_auto_cleanup_on_paste', '@url' => url('http://www.tinymce.com/wiki.php/Plugin3x:paste'))),
+    '#description' => t('If enabled, contents will be automatically processed when you paste using Ctrl+V or similar methods. Cleaning up contents from MS Word or pasting as plain text will <strong>not</strong> work without this.'),
+  );
+
+  $form['paste']['paste_block_drop'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Block drag/drop'),
+    '#default_value' => !empty($settings['paste_block_drop']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, blocks drag/drop from/to the editor and inside it.'),
+  );
+
+  $form['paste']['paste_retain_style_properties'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Retain style properties'),
+    '#default_value' => $settings['paste_retain_style_properties'],
+    '#description' => t('Comma separated list of style properties to retain during the paste operation from Word. For example: "font-size,color". If you want to remove all style properties use an empty string "" or "none". If you want to keep all style properties, use "all" or "*".'),
+  );
+
+  $form['paste']['paste_strip_class_attributes'] = array(
+    '#type' => 'select',
+    '#title' => t('Strip class attributes'),
+    '#options' => array(
+      'none' => t('None'),
+      'all' => t('All'),
+      'mso' => t('MS Office'),
+    ),
+    '#default_value' => $settings['paste_strip_class_attributes'],
+    '#description' => t('Enables you to strip the class attributes when pasted.'),
+  );
+
+  $form['paste']['paste_remove_spans'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Remove spans'),
+    '#default_value' => !empty($settings['paste_remove_spans']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, removes all span elements when pasting.'),
+  );
+
+  $form['paste']['paste_remove_styles'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Remove styles'),
+    '#default_value' => !empty($settings['paste_remove_styles']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, removes all style information when pasting, regardless of browser type. Pasting from Word 2000 will cause TinyMCE to error.'),
+  );
+
+  $form['paste']['paste_remove_styles_if_webkit'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Remove styles in WebKit'),
+    '#default_value' => !empty($settings['paste_remove_styles_if_webkit']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, removes all style information when pasting in WebKit since it has a serious paste bug.'),
+  );
+
+  $form['paste']['paste_convert_middot_lists'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Convert Word lists'),
+    '#default_value' => !empty($settings['paste_convert_middot_lists']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, the paste plugin tries to convert Word lists into semantic XHTML list elements.'),
+  );
+
+  $form['paste']['paste_convert_headers_to_strong'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Convert headers to strong'),
+    '#default_value' => !empty($settings['paste_convert_headers_to_srong']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, the paste plugin tries to convert Word headers to strong tags.'),
+  );
+
+  $form['paste']['paste_max_consecutive_linebreaks'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Max consecutive linebreaks'),
+    '#size' => 5,
+    '#maxlength' => '10',
+    '#default_value' => !empty($settings['paste_max_consecutive_linebreaks']),
+    '#description' => t('The maximum number of consecutive linebreaks to use.'),
+  );
+
+  $form['paste']['paste_text_use_dialog'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use dialog'),
+    '#default_value' => !empty($settings['paste_text_use_dialog']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, uses legacy mode for the Paste as Text button. Will use a dialog instead of treating the button as a toggle.'),
+  );
+
+  $form['paste']['paste_text_sticky'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Sticky "Paste text" button'),
+    '#default_value' => !empty($settings['paste_text_sticky']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, keeps the "Paste text" button selected after pasting. Requires the "Paste text" button and "Process contents on paste" to be enabled.'),
+  );
+
+  $form['paste']['paste_text_sticky_default'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Paste as plain text by default'),
+    '#default_value' => !empty($settings['paste_text_sticky_default']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, the "Paste text" button is selected when the editor starts. Requires the "Paste text" button and "Process contents on paste" to be enabled.'),
+  );
+
+  $form['paste']['paste_text_notifyalways'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Always notify when pasting plain text'),
+    '#default_value' => !empty($settings['paste_text_notifyalways']),
+    '#return_value' => 1,
+    '#description' => t('If enabled, users will be notified each time plain text pasting mode is enabled.'),
+  );
+
+  $form['paste']['paste_text_linebreaktype'] = array(
+    '#type' => 'select',
+    '#title' => t('Linebreak type'),
+    '#options' => array(
+      'combined' => t('Combined'),
+      'p' => t('<p>'),
+      'br' => t('<br>'),
+    ),
+    '#default_value' => $settings['paste_text_linebreaktype'],
+    '#description' => t('Converts plain text linebreaks to br or p elements.'),
   );
 }
 
@@ -346,6 +488,20 @@ function wysiwyg_tinymce_settings($editor, $config, $theme) {
     'convert_fonts_to_spans',
     'language',
     'paste_auto_cleanup_on_paste',
+    'paste_block_drop',
+    'paste_convert_middot_lists',
+    'paste_convert_headers_to_strong',
+    'paste_max_consecutive_linebreaks',
+    'paste_remove_spans',
+    'paste_remove_styles',
+    'paste_remove_styles_if_webkit',
+    'paste_retain_style_properties',
+    'paste_strip_class_attributes',
+    'paste_text_linebreaktype',
+    'paste_text_notifyalways',
+    'paste_text_use_dialog',
+    'paste_text_sticky',
+    'paste_text_sticky_default',
     'preformatted',
     'remove_linebreaks',
     'theme_advanced_blockformats',
@@ -355,6 +511,7 @@ function wysiwyg_tinymce_settings($editor, $config, $theme) {
       $settings[$setting_name] = $config[$setting_name];
     }
   }
+
   if (isset($config['verify_html'])) {
     // TinyMCE performs a type-agnostic comparison on this particular setting.
     $settings['verify_html'] = (bool) $config['verify_html'];
@@ -366,10 +523,14 @@ function wysiwyg_tinymce_settings($editor, $config, $theme) {
 
   if (isset($config['css_setting'])) {
     if ($config['css_setting'] == 'theme') {
-      $settings['content_css'] = implode(',', wysiwyg_get_css());
+      $settings['content_css'] = implode(',', wysiwyg_get_css(isset($config['css_theme']) ? $config['css_theme'] : ''));
     }
     elseif ($config['css_setting'] == 'self' && isset($config['css_path'])) {
-      $settings['content_css'] = strtr($config['css_path'], array('%b' => base_path(), '%t' => drupal_get_path('theme', variable_get('theme_default', NULL))));
+      $settings['content_css'] = strtr($config['css_path'], array(
+        '%b' => base_path(),
+        '%t' => drupal_get_path('theme', variable_get('theme_default', NULL)),
+        '%q' => variable_get('css_js_query_string', ''),
+      ));
     }
   }
 
@@ -445,6 +606,7 @@ function wysiwyg_tinymce_settings($editor, $config, $theme) {
         'theme_advanced_resize_horizontal' => FALSE,
         'theme_advanced_resizing_use_cookie' => FALSE,
         'theme_advanced_statusbar_location' => isset($config['theme_advanced_statusbar_location']) ? $config['theme_advanced_statusbar_location'] : 'bottom',
+        'theme_advanced_path' => isset($config['theme_advanced_path']) ? $config['theme_advanced_path'] : 1,
         'theme_advanced_resizing' => isset($config['theme_advanced_resizing']) ? $config['theme_advanced_resizing'] : 1,
         'theme_advanced_toolbar_location' => isset($config['theme_advanced_toolbar_location']) ? $config['theme_advanced_toolbar_location'] : 'top',
         'theme_advanced_toolbar_align' => isset($config['theme_advanced_toolbar_align']) ? $config['theme_advanced_toolbar_align'] : 'left',
@@ -478,42 +640,18 @@ function wysiwyg_tinymce_settings($editor, $config, $theme) {
 }
 
 /**
- * Build a JS settings array of native external plugins that need to be loaded separately.
- *
- * TinyMCE requires that external plugins (i.e. not residing in the editor's
- * directory) are loaded (once) upon initializing the editor.
+ * Build a JS settings array with global metadata for native external plugins.
  */
-function wysiwyg_tinymce_plugin_settings($editor, $profile, $plugins) {
-  $settings = array();
-  foreach ($plugins as $name => $plugin) {
-    if (!empty($plugin['load'])) {
-      // Add path for native external plugins; internal ones are loaded
-      // automatically.
-      if (empty($plugin['internal']) && isset($plugin['filename'])) {
-        $settings[$name] = base_path() . $plugin['path'] . '/' . $plugin['filename'];
-      }
+function _wysiwyg_tinymce_plugin_meta($editor, $plugin) {
+  $meta = NULL;
+  if (!empty($plugin['load'])) {
+    // Add path for native external plugins; internal ones are loaded
+    // automatically.
+    if (empty($plugin['internal']) && isset($plugin['filename'])) {
+      $meta = base_path() . $plugin['path'] . '/' . $plugin['filename'];
     }
   }
-  return $settings;
-}
-
-/**
- * Build a JS settings array for Drupal plugins loaded via the proxy plugin.
- */
-function wysiwyg_tinymce_proxy_plugin_settings($editor, $profile, $plugins) {
-  $settings = array();
-  foreach ($plugins as $name => $plugin) {
-    // Populate required plugin settings.
-    $settings[$name] = $plugin['dialog settings'] + array(
-      'title' => $plugin['title'],
-      'icon' => base_path() . $plugin['icon path'] . '/' . $plugin['icon file'],
-      'iconTitle' => $plugin['icon title'],
-    );
-    if (isset($plugin['css file'])) {
-      $settings[$name]['css'] = base_path() . $plugin['css path'] . '/' . $plugin['css file'];
-    }
-  }
-  return $settings;
+  return $meta;
 }
 
 /**
@@ -543,32 +681,44 @@ function _wysiwyg_tinymce_plugin_name($op, $name) {
 }
 
 /**
+ * Build a JS settings array for Drupal plugins loaded via the proxy plugin.
+ */
+function _wysiwyg_tinymce_proxy_plugin_settings($editor, $profile, $plugins) {
+  $settings = array();
+  foreach ($plugins as $name => $plugin) {
+    // Just need a list of all enabled plugins for each instance.
+    $settings[$name] = TRUE;
+  }
+  return $settings;
+}
+
+/**
  * Return internal plugins for this editor; semi-implementation of hook_wysiwyg_plugin().
  */
-function wysiwyg_tinymce_plugins($editor) {
+function _wysiwyg_tinymce_plugins($editor) {
   $plugins = array(
     'default' => array(
       'path' => $editor['library path'] . '/themes/advanced',
       'buttons' => array(
         'bold' => t('Bold'), 'italic' => t('Italic'), 'underline' => t('Underline'),
-        'strikethrough' => t('Strike-through'),
-        'justifyleft' => t('Align left'), 'justifycenter' => t('Align center'), 'justifyright' => t('Align right'), 'justifyfull' => t('Justify'),
-        'bullist' => t('Bullet list'), 'numlist' => t('Numbered list'),
+        'strikethrough' => t('Strikethrough'),
+        'justifyleft' => t('Align left'), 'justifycenter' => t('Align center'), 'justifyright' => t('Align right'), 'justifyfull' => t('Align full'),
+        'bullist' => t('Unordered list'), 'numlist' => t('Ordered list'),
         'outdent' => t('Outdent'), 'indent' => t('Indent'),
         'undo' => t('Undo'), 'redo' => t('Redo'),
         'link' => t('Link'), 'unlink' => t('Unlink'), 'anchor' => t('Anchor'),
         'image' => t('Image'),
-        'cleanup' => t('Clean-up'),
+        'cleanup' => t('Cleanup messy code'),
+        'forecolor' => t('Select text color'), 'backcolor' => t('Select background color'),
         'formatselect' => t('Block format'), 'styleselect' => t('Styles'),
         'fontselect' => t('Font'), 'fontsizeselect' => t('Font size'),
-        'forecolor' => t('Forecolor'), 'backcolor' => t('Backcolor'),
         'sup' => t('Superscript'), 'sub' => t('Subscript'),
-        'blockquote' => t('Blockquote'), 'code' => t('Source code'),
-        'hr' => t('Horizontal rule'),
+        'blockquote' => t('Blockquote'), 'code' => t('Edit HTML Source'),
+        'hr' => t('Insert horizontal ruler'),
         'cut' => t('Cut'), 'copy' => t('Copy'), 'paste' => t('Paste'),
-        'visualaid' => t('Visual aid'),
-        'removeformat' => t('Remove format'),
-        'charmap' => t('Character map'),
+        'visualaid' => t('Toggle guidelines/invisible elements'),
+        'removeformat' => t('Remove formatting'),
+        'charmap' => t('Insert custom character'),
         'help' => t('Help'),
       ),
       'internal' => TRUE,
@@ -703,15 +853,6 @@ function wysiwyg_tinymce_plugins($editor) {
       'load' => TRUE,
     ),
   );
-  if (version_compare($editor['installed version'], '3', '<')) {
-    $plugins['flash'] = array(
-      'path' => $editor['library path'] . '/plugins/flash',
-      'buttons' => array('flash' => t('Flash')),
-      'extended_valid_elements' => array('img[class|src|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|obj|param|embed]'),
-      'internal' => TRUE,
-      'load' => TRUE,
-    );
-  }
   if (version_compare($editor['installed version'], '2.0.6', '>')) {
     $plugins['media'] = array(
       'path' => $editor['library path'] . '/plugins/media',

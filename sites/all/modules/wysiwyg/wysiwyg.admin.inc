@@ -28,6 +28,7 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
     'language' => 'en',
     'buttons' => array(),
     'css_setting' => 'theme',
+    'css_theme' => variable_get('node_admin_theme') ? variable_get('admin_theme') : variable_get('theme_default', 'bartik'),
     'css_path' => NULL,
   );
   $profile = (object) $profile;
@@ -94,7 +95,7 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
   require_once DRUPAL_ROOT . '/includes/iso.inc';
   $predefined = _locale_get_predefined_list();
   foreach ($predefined as $key => $value) {
-    // Include native name in output, if possible
+    // Include native name in output, if possible.
     if (count($value) > 1) {
       $tname = t($value[0]);
       $predefined[$key] = ($tname == $value[1]) ? $tname : "$tname ($value[1])";
@@ -122,7 +123,7 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
         $icon = '';
         if (!empty($meta['path'])) {
           // @todo Button icon locations are different in editors, editor versions,
-          //   and contrib/custom plugins (like Image Assist, f.e.).
+          // and contrib/custom plugins (like Image Assist, f.e.).
           $img_src = $meta['path'] . "/images/$name.gif";
           // Handle plugins that have more than one button.
           if (!file_exists($img_src)) {
@@ -183,13 +184,40 @@ function wysiwyg_profile_form($form, &$form_state, $profile) {
     '#description' => t('Defines the CSS to be used in the editor area.<br />Use theme CSS - loads stylesheets from current site theme.<br/>Define CSS - enter path for stylesheet files below.<br />Editor default CSS - uses default stylesheets from editor.'),
   );
 
+  $themes = list_themes();
+  $theme_list = array(
+    '' => t('Active theme'),
+    'wysiwyg_theme_admin' => t('Admin theme'),
+    'wyiswyg_theme_default' => t('Default theme'),
+    // Set an optgroup 'Other'.
+    t('Other') => array(),
+  );
+  foreach ($themes as $theme) {
+    if ($theme->status) {
+      $theme_list[t('Other')][$theme->name] = $theme->info['name'];
+    }
+  }
+  $form['css']['css_theme'] = array(
+    '#type' => 'select',
+    '#title' => t('Theme'),
+    '#default_value' => $profile->settings['css_theme'],
+    '#description' => t("Select which theme's CSS to apply to the content while in the editor.<br />Beware that most theme styling may not apply well without all wrapping elements in place. Users may see different themes depending on their permissions.<br />Note: This is only applied when the 'Editor CSS' field above is set to 'Use theme CSS'."),
+    '#options' => $theme_list,
+    '#states' => array(
+      'visible' => array('select[name="css_setting"]' => array('value' => 'theme')),
+    ),
+  );
+
   $form['css']['css_path'] = array(
     '#type' => 'textfield',
     '#title' => t('CSS path'),
     '#default_value' => $settings['css_path'],
     '#size' => 40,
     '#maxlength' => 255,
-    '#description' => t('If "Define CSS" was selected above, enter path to a CSS file or a list of CSS files separated by a comma.') . '<br />' . t('Available tokens: <code>%b</code> (base path, eg: <code>/</code>), <code>%t</code> (path to theme, eg: <code>themes/garland</code>)') . '<br />' . t('Example:') . ' css/editor.css,/themes/garland/style.css,%b%t/style.css,http://example.com/external.css',
+    '#description' => t('If "Define CSS" was selected above, enter path to a CSS file or a list of CSS files separated by a comma.') . '<br />' . t('Available tokens: <code>%b</code> (base path, eg: <code>/</code>), <code>%t</code> (path to theme, eg: <code>themes/garland</code>), <code>%q</code> (<code>css_js_query_string</code> variable, used for cache-busting)') . '<br />' . t('Example:') . ' css/editor.css,/themes/garland/style.css,%b%t/style.css?%q,http://example.com/external.css',
+    '#states' => array(
+      'visible' => array('select[name="css_setting"]' => array('value' => 'self')),
+    ),
   );
 
   $form['advanced'] = array(
@@ -367,7 +395,7 @@ function wysiwyg_profile_overview($form, &$form_state) {
     '#title' => t('Installation instructions'),
     '#collapsible' => TRUE,
     '#collapsed' => !isset($show_instructions),
-    '#description' => (!$count ? t('There are no editor libraries installed currently. The following list contains a list of currently supported editors:') : ''),
+    '#description' => t('A complete list of <a href="@url">supported editor versions</a> for all Wysiwyg module versions can be found on drupal.org.', array('@url' => url('https://www.drupal.org/node/596966'))) . (!$count ? ' ' . t('There are no editor libraries installed currently. The following list contains a list of currently supported editors:') : ''),
     '#weight' => 10,
   );
   $form['status']['report'] = array('#markup' => theme('status_report', array('requirements' => $status)));
