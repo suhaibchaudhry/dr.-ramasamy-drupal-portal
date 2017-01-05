@@ -442,3 +442,6 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .view-confirm-mess
   display: table-cell; }
   
   
+button.tb-megamenu-button .fa {
+	visibility: hidden;
+}
