@@ -3242,3 +3242,6 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
   border-top: 1px solid #2d2d2d;
   border-bottom: 1px solid #2d2d2d;
 }
+button.tb-megamenu-button .fa {
+        visibility: hidden;
+}
