@@ -3246,8 +3246,8 @@ button.tb-megamenu-button .fa {
         visibility: hidden;
 }
 .shockwave-image {
-	height:320px;
-	width: 400px;
+	height:240px;
+	width: 320px;
 	float: right;
 	margin-left: 10px;
 }
@@ -3257,7 +3257,7 @@ button.tb-megamenu-button .fa {
     margin: 20px 0;
 }
 .shockwave-image {
-    width: 400px;
+    width: 100%;
     height: auto;
     text-align: center;
     clear: both;
