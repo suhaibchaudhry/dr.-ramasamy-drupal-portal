@@ -3261,7 +3261,7 @@ button.tb-megamenu-button .fa {
     height: auto;
     text-align: center;
     clear: both;
-    margin-right: 10px;
+    margin-right: none;
     float: none;
 }
 }
