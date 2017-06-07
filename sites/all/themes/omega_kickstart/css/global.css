@@ -3245,10 +3245,23 @@ html.js #commerce-backoffice-message-form fieldset .fieldset-legend {
 button.tb-megamenu-button .fa {
         visibility: hidden;
 }
-
+.shockwave-image {
+	height:320px;
+	width: 400px;
+	float: right;
+	margin-left: 10px;
+}
 @media only screen and (max-width: 680px) {
 .main-video {
     width: 100%;
     margin: 20px 0;
+}
+.shockwave-image {
+    width: 400px;
+    height: auto;
+    text-align: center;
+    clear: both;
+    margin-right: 10px;
+    float: none;
 }
 }
